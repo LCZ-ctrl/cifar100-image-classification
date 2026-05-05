@@ -13,10 +13,13 @@ from models.densenet169 import DenseNet169
 from models.resnet18 import ResNet18
 from models.resnet34 import ResNet34
 from models.resnet50 import ResNet50
+from models.resnet101 import ResNet101
 from models.resnext50 import ResNeXt50
+from models.resnext101 import ResNeXt101
 from models.shufflenetv1 import ShuffleNetV1
 from models.shufflenetv2 import ShuffleNetV2
 from models.wrn_40_4 import WideResNet_40_4
+from models.wrn_28_10 import WideResNet_28_10
 from models.vision_transformer import VisionTransformer
 
 
@@ -51,14 +54,20 @@ def build_model(model_name):
         model = ResNet34(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     elif model_name == 'resnet50':
         model = ResNet50(num_classes=config.NUM_CLASSES).to(config.DEVICE)
+    elif model_name == 'resnet101':
+        model = ResNet101(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     elif model_name == 'resnext50':
         model = ResNeXt50(num_classes=config.NUM_CLASSES).to(config.DEVICE)
+    elif model_name == 'resnext101':
+        model = ResNeXt101(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     elif model_name == 'shufflenetv1':
         model = ShuffleNetV1(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     elif model_name == 'shufflenetv2':
         model = ShuffleNetV2(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     elif model_name == 'wrn_40_4':
         model = WideResNet_40_4(num_classes=config.NUM_CLASSES).to(config.DEVICE)
+    elif model_name == 'wrn_28_10':
+        model = WideResNet_28_10(num_classes=config.NUM_CLASSES).to(config.DEVICE)
     elif model_name == 'vision_transformer':
         model = VisionTransformer(num_classes=config.NUM_CLASSES).to(config.DEVICE)
 

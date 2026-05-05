@@ -1,4 +1,4 @@
-# CIFAR100-Image-Classification
+# CIFAR100 Image Classification
 
 A collection of modified CNN models implemented in PyTorch for the CIFAR-100 classification task. Models are adapted for
 $32 \times 32$ inputs while preserving their core architectural logic.  
@@ -133,19 +133,22 @@ python eval.py
 
 It will show the model's prediction accuracy on the test set.
 
-| Model              | Params  | FLOPs   | Epochs | Time  | Top1 Accuracy | Top5 Accuracy |
-|:-------------------|---------|---------|:-------|-------|:--------------|---------------|
-| SqueezeNet         | 776.74K | 25.08M  | 150    | 0.47h | 68.64%        | 90.94%        |
-| VGG-16             | 24.26M  | 408.85M | 150    | 0.49h | 74.09%        | 92.88%        |
-| GoogLeNet          | 6.08M   | 483.24M | 150    | 0.65h | 78.01%        | 94.98%        |
-| MobileNetv2        | 2.35M   | 94.67M  | 150    | 0.53h | 72.35%        | 93.40%        |
-| MobileNetv3        | 4.33M   | 71.16M  | 150    | 0.51h | 73.63%        | 93.75%        |
-| DenseNet-121       | 7.05M   | 908.19M | 150    | 1.40h | 80.47%        | 95.85%        |
-| DenseNet-169       | 12.64M  | 1.08G   | 150    | 1.84h | 80.31%        | 95.77%        |
-| ResNet-18          | 11.22M  | 557.94M | 150    | 0.48h | 77.55%        | 94.26%        |
-| ResNet-34          | 21.33M  | 1.16G   | 150    | 0.71h | 78.27%        | 94.87%        |
-| ResNet-50          | 23.71M  | 1.31G   | 150    | 1.15h | 79.10%        | 95.34%        |
-| ResNeXt-50         | 23.18M  | 1.36G   | 150    | 1.39h | 81.21%        | 95.84%        |
-| ShuffleNetv1       | 999.87K | 45.36M  | 150    | 1.27h | 71.74%        | 93.02%        |
-| ShuffleNetv2       | 1.36M   | 47.36M  | 150    | 0.46h | 72.77%        | 93.04%        |
-| WideResNet-40-4    | 8.97M   | 1.30G   | 150    | 0.84h | 80.07%        | 95.65%        |
+| Model            | Params  | FLOPs   | Epochs | Time  | Top1 Accuracy | Top5 Accuracy |
+|:-----------------|---------|---------|:-------|-------|:--------------|---------------|
+| SqueezeNet       | 776.74K | 25.08M  | 150    | 0.47h | 68.64%        | 90.94%        |
+| VGG-16           | 24.26M  | 408.85M | 150    | 0.49h | 74.09%        | 92.88%        |
+| GoogLeNet        | 6.08M   | 483.24M | 150    | 0.65h | 78.01%        | 94.98%        |
+| MobileNetv2      | 2.35M   | 94.67M  | 150    | 0.53h | 72.35%        | 93.40%        |
+| MobileNetv3      | 4.33M   | 71.16M  | 150    | 0.51h | 73.63%        | 93.75%        |
+| DenseNet-121     | 7.05M   | 908.19M | 150    | 1.40h | 80.47%        | 95.85%        |
+| DenseNet-169     | 12.64M  | 1.08G   | 150    | 1.84h | 80.31%        | 95.77%        |
+| ResNet-18        | 11.22M  | 557.94M | 150    | 0.48h | 77.55%        | 94.26%        |
+| ResNet-34        | 21.33M  | 1.16G   | 150    | 0.71h | 78.27%        | 94.87%        |
+| ResNet-50        | 23.71M  | 1.31G   | 150    | 1.15h | 79.10%        | 95.34%        |
+| ResNet-101       | 42.70M  | 2.53G   | 150    | 1.92h | 80.33%        | 95.67%        |
+| ResNeXt-50       | 23.18M  | 1.36G   | 150    | 1.39h | 81.21%        | 95.84%        |
+| ResNeXt-101      | 42.33M  | 2.59G   | 150    | 2.29h | 81.72%        | 95.92%        |
+| ShuffleNetv1     | 999.87K | 45.36M  | 150    | 1.27h | 71.74%        | 93.02%        |
+| ShuffleNetv2     | 1.36M   | 47.36M  | 150    | 0.46h | 72.77%        | 93.04%        |
+| WideResNet-40-4  | 8.97M   | 1.30G   | 150    | 0.84h | 80.07%        | 95.65%        |
+| WideResNet-28-10 | 36.54M  | 5.25G   | 150    | 2.46h | 81.33%        | 95.89%        |
