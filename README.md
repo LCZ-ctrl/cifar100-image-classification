@@ -1,4 +1,4 @@
-# CIFAR100 Image Classification
+# CIFAR100-Image-Classification
 
 A collection of modified CNN models implemented in PyTorch for the CIFAR-100 classification task. Models are adapted for
 $32 \times 32$ inputs while preserving their core architectural logic.  
@@ -116,11 +116,10 @@ results (green for correct, red for wrong).
 
 <br>
 <p align="center">
-    <img src="./images/Figure_1.png" width="230" />
-    <img src="./images/Figure_2.png" width="230" />
-    <br>
-    <img src="./images/Figure_3.png" width="230" />
-    <img src="./images/Figure_4.png" width="230" />
+    <img src="./images/Figure_1.png" width="180" />
+    <img src="./images/Figure_2.png" width="180" />
+    <img src="./images/Figure_3.png" width="180" />
+    <img src="./images/Figure_4.png" width="180" />
 </p>
 
 ## Evaluation
@@ -137,6 +136,7 @@ It will show the model's prediction accuracy on the test set.
 |:-----------------|---------|---------|:-------|-------|:--------------|---------------|
 | SqueezeNet       | 776.74K | 25.08M  | 150    | 0.47h | 68.64%        | 90.94%        |
 | VGG-16           | 24.26M  | 408.85M | 150    | 0.49h | 74.09%        | 92.88%        |
+| VGG-19           | 29.58M  | 522.23M | 150    | 0.49h | 73.40%        | 92.17%        |
 | GoogLeNet        | 6.08M   | 483.24M | 150    | 0.65h | 78.01%        | 94.98%        |
 | MobileNetv2      | 2.35M   | 94.67M  | 150    | 0.53h | 72.35%        | 93.40%        |
 | MobileNetv3      | 4.33M   | 71.16M  | 150    | 0.51h | 73.63%        | 93.75%        |

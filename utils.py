@@ -5,6 +5,7 @@ import numpy as np
 import config
 from models.squeezenet import SqueezeNet
 from models.vgg16 import VGG16
+from models.vgg19 import VGG19
 from models.googlenet import GoogLeNet
 from models.mobilenetv2 import MobileNetV2
 from models.mobilenetv3 import MobileNetV3
@@ -33,42 +34,33 @@ def calculate_topk_correct(outputs, labels, k=1):
     return correct.sum().item()
 
 
-def build_model(model_name):
-    if model_name == 'squeezenet':
-        model = SqueezeNet(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'vgg16':
-        model = VGG16(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'googlenet':
-        model = GoogLeNet(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'mobilenetv2':
-        model = MobileNetV2(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'mobilenetv3':
-        model = MobileNetV3(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'densenet121':
-        model = DenseNet121(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'densenet169':
-        model = DenseNet169(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'resnet18':
-        model = ResNet18(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'resnet34':
-        model = ResNet34(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'resnet50':
-        model = ResNet50(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'resnet101':
-        model = ResNet101(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'resnext50':
-        model = ResNeXt50(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'resnext101':
-        model = ResNeXt101(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'shufflenetv1':
-        model = ShuffleNetV1(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'shufflenetv2':
-        model = ShuffleNetV2(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'wrn_40_4':
-        model = WideResNet_40_4(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'wrn_28_10':
-        model = WideResNet_28_10(num_classes=config.NUM_CLASSES).to(config.DEVICE)
-    elif model_name == 'vision_transformer':
-        model = VisionTransformer(num_classes=config.NUM_CLASSES).to(config.DEVICE)
+MODEL_MAP = {
+    'squeezenet': SqueezeNet,
+    'vgg16': VGG16,
+    'vgg19': VGG19,
+    'googlenet': GoogLeNet,
+    'mobilenetv2': MobileNetV2,
+    'mobilenetv3': MobileNetV3,
+    'densenet121': DenseNet121,
+    'densenet169': DenseNet169,
+    'resnet18': ResNet18,
+    'resnet34': ResNet34,
+    'resnet50': ResNet50,
+    'resnet101': ResNet101,
+    'resnext50': ResNeXt50,
+    'resnext101': ResNeXt101,
+    'shufflenetv1': ShuffleNetV1,
+    'shufflenetv2': ShuffleNetV2,
+    'wrn_40_4': WideResNet_40_4,
+    'wrn_28_10': WideResNet_28_10,
+    'vision_transformer': VisionTransformer
+}
 
-    return model
+
+def build_model(model_name):
+    model = MODEL_MAP.get(model_name.lower())
+
+    if model is None:
+        raise ValueError(f"Model {model_name} not found!\nValid models: {list(MODEL_MAP.keys())}")
+
+    return model(num_classes=config.NUM_CLASSES).to(config.DEVICE)
