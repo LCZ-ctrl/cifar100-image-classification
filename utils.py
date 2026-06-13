@@ -1,7 +1,3 @@
-import torch
-import random
-import numpy as np
-
 import config
 from models.squeezenet import SqueezeNet
 from models.vgg16 import VGG16
