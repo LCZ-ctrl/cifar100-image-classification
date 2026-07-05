@@ -45,7 +45,7 @@ def prepare_data(
     # Test
     for category in classes:
         img_list = [f for f in os.listdir(raw_test_path / category)
-                    if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
+                    if f.lower().endswith('.png')]
         test_files[category] = img_list
         total_files += len(img_list)
 
